@@ -12,11 +12,22 @@ class App extends React.Component {
     };
   }
 
+  handleAddPost = (post) => {
+    const newPost = {
+      ...post,
+      id: Date.now(),
+    };
+    this.setState((prevState) => ({
+      posts: [newPost, ...prevState.posts],
+    }));
+  }
+
 
   render() {
     return (
       <div>
         <Header />
+        <PostForm onAddPost={this.handleAddPost} />
 
         <Footer />
       </div>
