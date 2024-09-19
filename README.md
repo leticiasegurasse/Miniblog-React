@@ -17,6 +17,8 @@
 
 
 ## 📝Feito por
-
+- __Leticia Segurasse__
+- __Miguel Dutra__
+- __Thiago Roncete__ 
 #
 
