@@ -1,8 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import PostForm from './components/PostForm';
 import PostList from './components/PostList';
+import Modal from './components/Modal';
+
+const Container = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+`;
 
 class App extends React.Component {
   constructor(props) {
@@ -34,10 +44,13 @@ class App extends React.Component {
     this.setState({ showModal: true, selectedPost: post });
   }
 
+  handleCloseModal = () => {
+    this.setState({ showModal: false, selectedPost: null });
+  }
 
   render() {
     return (
-      <div>
+      <Container>
         <Header />
         <PostForm onAddPost={this.handleAddPost} />
         <PostList
@@ -45,9 +58,13 @@ class App extends React.Component {
           onDelete={this.handleDeletePost}
           onReadMore={this.handleReadMore}
         />
-        
+        <Modal
+          show={this.state.showModal}
+          onClose={this.handleCloseModal}
+          post={this.state.selectedPost}
+        />
         <Footer />
-      </div>
+      </Container>
     );
   }
 }

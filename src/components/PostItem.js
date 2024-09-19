@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const PostContainer = styled.div`
   display: flex;
   margin: 20px auto;
-  max-width: 800px;
+  width: 70%;
   background-color: #f9f9f9;
   overflow: hidden;
   border: 1px solid #ddd;
@@ -12,6 +12,7 @@ const PostContainer = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
+    margin: 20px;
   }
 `;
 

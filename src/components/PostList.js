@@ -1,12 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
 import PostItem from './PostItem';
+
+const PostListContainer = styled.div`
+  width: 100%;
+`;
+
 
 class PostList extends React.Component {
   render() {
     const { posts, onDelete, onReadMore } = this.props;
 
     return (
-      <div>
+      <PostListContainer>
         {posts.map((post) => (
           <PostItem
             key={post.id}
@@ -15,7 +21,7 @@ class PostList extends React.Component {
             onReadMore={onReadMore}
           />
         ))}
-      </div>
+      </PostListContainer>
     );
   }
 }

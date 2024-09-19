@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const FormContainer = styled.form`
   margin: 20px auto;
-  width: 60%;
+  width: 70%;
   display: flex;
   flex-direction: column;
 

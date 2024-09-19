@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const HeaderContainer = styled.header`
+  width: 100%;
   background-color: #6200ee;
   padding: 20px;
   text-align: center;
