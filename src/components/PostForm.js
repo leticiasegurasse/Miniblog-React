@@ -44,12 +44,20 @@ class PostForm extends React.Component {
     };
   }
 
-  handleChange = (event) => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
+  onChangeTitle = (event) => {
+    this.setState({ title: event.target.value });
   }
+  
+  onChangeContent = (event) => {
+    this.setState({ content: event.target.value });
+  }
+  
+  onChangeImageUrl = (event) => {
+    this.setState({ imageUrl: event.target.value });
+  }
+  
 
-  handleSubmit = (event) => {
+  onSubmit = (event) => {
     event.preventDefault();
     this.props.onAddPost(this.state);
     this.setState({ title: '', content: '', imageUrl: '' });
@@ -57,13 +65,13 @@ class PostForm extends React.Component {
 
   render() {
     return (
-      <FormContainer onSubmit={this.handleSubmit}>
+      <FormContainer onSubmit={this.onSubmit}>
         <input
           type="text"
           name="title"
           placeholder="Título"
           value={this.state.title}
-          onChange={this.handleChange}
+          onChange={this.onChangeTitle}
           maxLength="50"
           required
         />
@@ -71,7 +79,7 @@ class PostForm extends React.Component {
           name="content"
           placeholder="Conteúdo"
           value={this.state.content}
-          onChange={this.handleChange}
+          onChange={this.onChangeContent}
           required
         />
         <input
@@ -79,7 +87,7 @@ class PostForm extends React.Component {
           name="imageUrl"
           placeholder="URL da Imagem (opcional)"
           value={this.state.imageUrl}
-          onChange={this.handleChange}
+          onChange={this.onChangeImageUrl}
         />
         <button type="submit">Postar</button>
       </FormContainer>
