@@ -58,7 +58,7 @@ class PostItem extends React.Component {
 
     return (
       <PostContainer>
-        <Image src={post.imageUrl || 'https://picsum.photos/300/200'} alt="Imagem do Post" />
+        <Image src={post.imageUrl || 'https://picsum.photos/300/150'} alt="Imagem do Post" />
         
         <Content>
           <h2>{post.title}</h2>
