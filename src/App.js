@@ -8,45 +8,50 @@ import PostList from './components/PostList';
 import Modal from './components/Modal';
 
 const Container = styled.div`
-  min-height: 100vh;
+  min-height: 100vh; 
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column; 
+  justify-content: space-between; 
+  align-items: center; 
 `;
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+    // Estado inicial da aplicação
     this.state = {
-      posts: [],
-      showModal: false,
-      selectedPost: null,
+      posts: [], 
+      showModal: false, 
+      selectedPost: null, 
     };
   }
 
+  // Adiciona uma nova postagem
   onAddPost = (post) => {
     const newPost = {
       ...post,
-      id: Date.now(),
+      id: Date.now(), // Gera um ID único baseado na data atual
     };
     this.setState((prevState) => ({
-      posts: [newPost, ...prevState.posts],
+      posts: [newPost, ...prevState.posts], // Adiciona a nova postagem ao início do array de posts
     }));
   }
 
+  // Deleta uma postagem pelo ID
   onDeletePost = (id) => {
     this.setState((prevState) => ({
-      posts: prevState.posts.filter((post) => post.id !== id),
+      posts: prevState.posts.filter((post) => post.id !== id), 
     }));
   }
 
+  // Abrir o modal 
   onReadMore = (post) => {
-    this.setState({ showModal: true, selectedPost: post });
+    this.setState({ showModal: true, selectedPost: post }); // Atualiza o estado para mostrar o modal e define a postagem selecionada
   }
 
+  // Fechar o modal
   onCloseModal = () => {
-    this.setState({ showModal: false, selectedPost: null });
+    this.setState({ showModal: false, selectedPost: null }); 
   }
 
   render() {
@@ -54,17 +59,21 @@ class App extends React.Component {
       <Container>
         <Header />
         <Banner />
+        
         <PostForm onAddPost={this.onAddPost} />
+        
         <PostList
-          posts={this.state.posts}
-          onDelete={this.onDeletePost}
-          onReadMore={this.onReadMore}
+          posts={this.state.posts} 
+          onDelete={this.onDeletePost} 
+          onReadMore={this.onReadMore} 
         />
+        
         <Modal
-          show={this.state.showModal}
-          onClose={this.onCloseModal}
-          post={this.state.selectedPost}
+          show={this.state.showModal} 
+          onClose={this.onCloseModal} 
+          post={this.state.selectedPost} 
         />
+        
         <Footer />
       </Container>
     );
