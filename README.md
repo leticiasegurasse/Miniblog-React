@@ -39,9 +39,11 @@ http://localhost:3000
 ```
 
 ## 🌐Deploy
-O deploy foi feito utilizando `Surge`, e a aplicação pode ser acessada no seguinte link:
+O deploy foi feito utilizando `Surge` e `Netlify`, e a aplicação pode ser acessada no seguinte link:
 
-[Miniblog Surge](https://testess.surge.sh)
+[Miniblog Surge](https://miniblogfoda.surge.sh)
+
+[Miniblog Netlify](https://miniblogfoda.netlify.app/)
 
 ## 📑Funcionalidades Detalhadas
 - __Postagem com Imagem Opcional:__ Se o usuário não fornecer uma URL válida de imagem, será exibida uma imagem padrão.
