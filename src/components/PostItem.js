@@ -10,30 +10,18 @@ const PostContainer = styled.div`
   border: 1px solid #ddd;
   border-radius: 8px;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-    margin: 20px;
-  }
 `;
 
 const Image = styled.img`
   width: 40%;
   object-fit: cover;
 
-  @media (max-width: 768px) {
-    width: 100%;
-    height: 200px;
-  }
 `;
 
 const Content = styled.div`
   width: 60%;
   padding: 20px;
   position: relative;
-
-  @media (max-width: 768px) {
-    width: 100%;
-  }
 
   h2 {
     margin-top: 0;
@@ -61,20 +49,27 @@ const Content = styled.div`
 
 class PostItem extends React.Component {
   render() {
-    const { post, onDelete, onReadMore } = this.props;
+    const { post, onDelete, onReadMore } = this.props; 
+
+    // Cria um preview do conteúdo com no máximo 100 caracteres
     const contentPreview = post.content.length > 100
-      ? post.content.substring(0, 100) + '...'
+      ? post.content.substring(0, 100) + '...' 
       : post.content;
 
     return (
       <PostContainer>
         <Image src={post.imageUrl || 'https://picsum.photos/300/200'} alt="Imagem do Post" />
+        
         <Content>
           <h2>{post.title}</h2>
+          
           <p>{contentPreview}</p>
+          
+          {/* Botão "Leia mais" aparece somente se o conteúdo for maior que 100 caracteres */}
           {post.content.length > 100 && (
             <button onClick={() => onReadMore(post)}>Leia mais</button>
           )}
+          
           <button onClick={() => onDelete(post.id)}>Deletar</button>
         </Content>
       </PostContainer>
