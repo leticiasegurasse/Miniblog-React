@@ -9,7 +9,11 @@ Este projeto é uma aplicação web de __Miniblog__ desenvolvida utilizando Reac
 - __Layout Responsivo:__ A interface se ajusta para diferentes tamanhos de tela, como desktops.
 
 ## 🚀Tecnologias Utilizadas
-
+- __React:__ Biblioteca JavaScript para construção da interface.
+- __Styled-Components:__ Utilizado para estilização dos componentes.
+- __Node.js & npm:__ Utilizados para gerenciar dependências e rodar scripts de desenvolvimento.
+- __Surge:__ Serviço de deploy para hospedar o projeto de forma rápida e simples.
+- __HTML/CSS:__ Estrutura e estilo base da aplicação.
 
 ## ⚙️Instalação e Execução
 __Pré-requisitos__
@@ -40,6 +44,10 @@ O deploy foi feito utilizando `Surge`, e a aplicação pode ser acessada no segu
 [Miniblog Surge](https://testess.surge.sh)
 
 ## 📑Funcionalidades Detalhadas
+- __Postagem com Imagem Opcional:__ Se o usuário não fornecer uma URL válida de imagem, será exibida uma imagem padrão.
+- __Limite de Caracteres:__ O título da postagem é limitado a 50 caracteres e o conteúdo tem limite de exibição parcial, com opção de "Leia mais" para ver o conteúdo completo.
+- __Validação de Inputs:__ O formulário valida se o título e o conteúdo foram preenchidos antes de permitir a criação da postagem.
+- __Componentização:__ O código foi dividido em componentes reutilizáveis, mantendo a lógica de estado e a renderização bem organizada.
 
 
 ## 📝Feito por
