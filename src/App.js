@@ -24,7 +24,7 @@ class App extends React.Component {
     };
   }
 
-  handleAddPost = (post) => {
+  onAddPost = (post) => {
     const newPost = {
       ...post,
       id: Date.now(),
@@ -34,17 +34,17 @@ class App extends React.Component {
     }));
   }
 
-  handleDeletePost = (id) => {
+  onDeletePost = (id) => {
     this.setState((prevState) => ({
       posts: prevState.posts.filter((post) => post.id !== id),
     }));
   }
 
-  handleReadMore = (post) => {
+  onReadMore = (post) => {
     this.setState({ showModal: true, selectedPost: post });
   }
 
-  handleCloseModal = () => {
+  onCloseModal = () => {
     this.setState({ showModal: false, selectedPost: null });
   }
 
@@ -52,15 +52,15 @@ class App extends React.Component {
     return (
       <Container>
         <Header />
-        <PostForm onAddPost={this.handleAddPost} />
+        <PostForm onAddPost={this.onAddPost} />
         <PostList
           posts={this.state.posts}
-          onDelete={this.handleDeletePost}
-          onReadMore={this.handleReadMore}
+          onDelete={this.onDeletePost}
+          onReadMore={this.onReadMore}
         />
         <Modal
           show={this.state.showModal}
-          onClose={this.handleCloseModal}
+          onClose={this.onCloseModal}
           post={this.state.selectedPost}
         />
         <Footer />
