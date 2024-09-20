@@ -12,10 +12,32 @@ Este projeto é uma aplicação web de __Miniblog__ desenvolvida utilizando Reac
 
 
 ## ⚙️Instalação e Execução
+__Pré-requisitos__
 
+- __Node.js__ instalado em sua máquina.
+
+__1. Clone o repositório:__
+```
+git clone https://github.com/seu-usuario/miniblog.git
+cd miniblog
+```
+__2. Instale as dependências:__
+```
+npm install
+```
+__3. Execute o projeto:__
+```
+npm run start
+```
+__4. Acesse no navegador:__
+```
+http://localhost:3000
+```
 
 ## 🌐Deploy
+O deploy foi feito utilizando `Surge`, e a aplicação pode ser acessada no seguinte link:
 
+[Miniblog Surge](https://testess.surge.sh)
 
 ## 📑Funcionalidades Detalhadas
 
