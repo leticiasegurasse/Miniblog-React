@@ -49,6 +49,21 @@ O deploy foi feito utilizando `Surge`, e a aplicação pode ser acessada no segu
 - __Validação de Inputs:__ O formulário valida se o título e o conteúdo foram preenchidos antes de permitir a criação da postagem.
 - __Componentização:__ O código foi dividido em componentes reutilizáveis, mantendo a lógica de estado e a renderização bem organizada.
 
+- ## 📂Estrutura de Arquivos
+```
+src/
+│
+├── components/
+│   ├── Header.js          # Componente que exibe o cabeçalho do projeto
+│   ├── Modal.js           # Componente para exibir conteúdo completo em uma modal
+│   ├── PostForm.js        # Componente para o formulário de criação de postagens
+│   ├── PostList.js        # Componente que lista as postagens
+│   ├── PostItem.js        # Componente que exibe uma postagem individual
+│   └── Footer.js          # Componente que exibe o rodapé do projeto
+│
+├── App.js                 # Componente principal da aplicação
+└── index.js               # Arquivo de entrada da aplicação
+```
 
 ## 📝Feito por
 - __Leticia Segurasse__
