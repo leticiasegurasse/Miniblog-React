@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Header from './components/Header';
+import Banner from './components/Banner';
 import Footer from './components/Footer';
 import PostForm from './components/PostForm';
 import PostList from './components/PostList';
@@ -52,6 +53,7 @@ class App extends React.Component {
     return (
       <Container>
         <Header />
+        <Banner />
         <PostForm onAddPost={this.onAddPost} />
         <PostList
           posts={this.state.posts}
