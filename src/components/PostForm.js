@@ -1,40 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
+import './PostForm.css'; 
 
-const FormContainer = styled.form`
-  margin: 20px auto;
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-
-  input[type='text'],
-  input[type='url'],
-  textarea {
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 16px;
-  }
-
-  textarea {
-    resize: vertical;
-    min-height: 100px;
-  }
-
-  button {
-    padding: 10px;
-    background-color: #6200ee;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-  }
-
-  button:hover {
-    background-color: #3700b3;
-  }
-`;
-
-// Componente de formulário para criar uma nova postagem
 class PostForm extends React.Component {
   constructor(props) {
     super(props);
@@ -71,7 +37,7 @@ class PostForm extends React.Component {
 
   render() {
     return (
-      <FormContainer onSubmit={this.onSubmit}>
+      <form className="form-container" onSubmit={this.onSubmit}>
         <input
           type="text"
           name="title"
@@ -96,7 +62,7 @@ class PostForm extends React.Component {
           onChange={this.onChangeImageUrl}
         />
         <button type="submit">Postar</button>
-      </FormContainer>
+      </form>
     );
   }
 }
